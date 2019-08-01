@@ -16,7 +16,7 @@ body{
 /* HEADER SECTION START HERE */
 header{
     background:#111;
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 5);
@@ -101,7 +101,7 @@ nav .nav-ul a:hover{
 
 /*========================= showcase start here===================================== */
 #showcase{
-    height: 70vh;
+    height: 80vh;
     text-align: center;
    
 }
@@ -111,7 +111,7 @@ nav .nav-ul a:hover{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height:70vh;
+    height:80vh;
     width: 100%;
     z-index: -1;
 }
@@ -120,14 +120,14 @@ nav .nav-ul a:hover{
     position: absolute;
     background:rgba(0, 0, 0, 0.8);
     top: 0; left: 0;
-    height:70vh;
+    height:80vh;
     width: 100%;
     z-index: -1;
 
 }
 #showcase h1{
     color: navy;
-    padding: 2em 0 0 0;
+    padding: 4em 0 0 0;
     text-shadow: 0 0 3px wheat;
 }
 #showcase h1::first-letter{
@@ -182,9 +182,21 @@ nav .nav-ul a:hover{
     width: 100%;
     clip-path: polygon(0% 0%, 100% 0, 100% 75%, 82% 81%, 50% 100%, 26% 86%, 0% 75%);
 }
-.section-grid  h2 {padding: 1em 0;}
+.section-grid  h2 {
+     margin: .7em 0;
+     padding: .4em 0; 
+     border-bottom: 1px grey solid;
+     background:#222;
+     text-align: center;
+     border-top-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+    }
 .section-grid-a li{list-style: none;}
-.section-grid a{color: navy; text-decoration: none; font-weight: 300;}
+.section-grid a{
+    color: grey; text-decoration: none; 
+    font-weight: 400;
+    
+}
 .section-grid-b .date{width: 40%; padding: 1em 0; color: navy;}
 .section-grid-b{color: grey;}
 
