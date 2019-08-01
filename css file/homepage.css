@@ -1,0 +1,277 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background: whitesmoke;
+    padding: 0;
+    margin:0;
+    font-size: 1em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+/* HEADER SECTION START HERE */
+header{
+    background:#111;
+    /* position: fixed; */
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+   
+}
+
+
+
+.header-wrapper{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo-wrapper{
+     text-align: center;
+     display: flex;
+     padding-top: 5px;
+} 
+ .logo{
+    color: navy;
+    font-size: 1.2em;
+}
+.logo-wrapper .federal{
+    color: blue;
+}
+ .logo-img{
+    width: 70px;
+    height: 60px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    margin-right: 1em;
+}
+.burger-icon{
+    color: grey;
+    font-size: 2em;
+}
+ nav{
+    background:rgba(0, 0, 0, 0.9);
+    position: absolute;
+    width: 100%;
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1,0);
+    top: 5em;
+    border-top: navy solid 1px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2)
+}
+nav .nav-ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav .nav-ul a {
+    color:gray;
+    text-decoration: navajowhite;
+    text-align: justify;
+    opacity: 0;
+    font-size: 1.1em;
+    transition: opacity  6s 0.1s ease-in-out;
+}
+nav .nav-ul a:hover{
+    color: navy;
+}
+
+/* NAV TOGGLE EFFECT START HERE */
+
+.toggle{display: none;}
+.toggle:checked ~nav{
+    transform: scale(1,1);
+
+}
+.toggle:checked ~nav .nav-ul a{
+    opacity:1;
+    transition: opacity  0.2s 0.2s ease-in-out;
+
+}
+/* NAV TOGGLE EFFECT END HERE */
+/* HEADER ENEDE HERE */
+
+
+/*========================= showcase start here===================================== */
+#showcase{
+    height: 70vh;
+    text-align: center;
+   
+}
+#showcase .bg-showcase{
+    position: absolute;
+    background: #222 url("../img/mm.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height:70vh;
+    width: 100%;
+    z-index: -1;
+}
+#showcase .bg-showcase::after{
+    content: '';
+    position: absolute;
+    background:rgba(0, 0, 0, 0.8);
+    top: 0; left: 0;
+    height:70vh;
+    width: 100%;
+    z-index: -1;
+
+}
+#showcase h1{
+    color: navy;
+    padding: 2em 0 0 0;
+    text-shadow: 0 0 3px wheat;
+}
+#showcase h1::first-letter{
+    color: gray;
+
+}
+
+#showcase p{
+    color:grey;
+    width: 50%;
+    margin: auto;
+    padding: 1em 0 0 0;
+}
+#showcase .btn{
+    color: #fa0;
+    border: none;
+    background: navy;
+    margin: 1em 0;
+    font-size: 1.1em;
+    padding: .6em;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-weight: bolder;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2)
+}
+#showcase .btn:hover{
+    color: #fa0;
+    border: none;
+    background:blue;
+}
+
+/* ========================= showcase end here===================================== */ 
+
+/* SECTION- A START HERE */
+.section-a{
+    width: 100%;
+    background: white;
+
+    
+}
+.section-a .section-grid{
+    background: #f5f5f5fd;
+    width: 90%;
+    margin: auto;
+    color: black
+}
+.section-grid-a img{
+     width: 100%;
+     clip-path: polygon(0% 0%, 100% 0, 100% 61%, 74% 73%, 100% 100%, 20% 80%, 0% 75%);
+}
+.section-grid-b img{
+    width: 100%;
+    clip-path: polygon(0% 0%, 100% 0, 100% 75%, 82% 81%, 50% 100%, 26% 86%, 0% 75%);
+}
+.section-grid  h2 {padding: 1em 0;}
+.section-grid-a li{list-style: none;}
+.section-grid a{color: navy; text-decoration: none; font-weight: 300;}
+.section-grid-b .date{width: 40%; padding: 1em 0; color: navy;}
+.section-grid-b{color: grey;}
+
+/*======================== MEDIA QGUERIES  FOR TABLET ===========================*/
+
+@media screen and (min-width:800px){
+    /* nav section */
+
+    .header-wrapper{
+        display: flex;
+    }
+    .logo-wrapper{
+        text-align: center;
+        display: flex;
+        padding-top: 5px;
+   } 
+   /* section-grid-A start here */
+.section-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-template-areas: 
+    "grid-two grid-two grid-two grid-one"
+    "grid-three grid-three grid-three grid-one";
+  }
+
+    .section-grid-a{ grid-area: grid-one;}
+    .section-grid-b{ grid-area: grid-two;}
+    .section-grid-c{ grid-area: grid-three; }
+    
+}
+
+
+.section-grid-a p{padding: 2em 0 ;}
+.section-grid-a li{
+   background: #f5f5f5;
+   color: grey;
+   font-size: 1em;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+
+/*===================================== MEDIA QGUERIES  FOR  DESKTOP===================================== */
+@media screen and (min-width:1100px){
+    #toggle{display: none;}
+    /*=========================== NAV section =========================*/
+    .header-wrapper{
+        display: flex;
+        width: 90%;
+        padding:.2em 0;
+    }
+    .logo-wrapper{
+        text-align: center;
+        display: flex;
+        padding-top: 5px;
+   } 
+
+ nav{
+     all: unset;
+    
+ }
+
+ nav  .nav-ul{
+     padding-top: 1em;
+     display: flex;
+
+ }
+ nav .nav-ul a{
+     margin-right: 1em;
+     opacity: 1;
+     font-size: 1.2em;
+     font-weight: 300;
+}
+
+/* section-grid-A start here */
+.section-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-template-areas: 
+    "grid-one grid-two grid-two grid-three";
+}
+
+.section-grid-a{ grid-area: grid-one;}
+.section-grid-b{  grid-area: grid-two;}
+.section-grid-c{   grid-area: grid-three;}
+
+}
